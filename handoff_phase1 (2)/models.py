@@ -154,6 +154,47 @@ def run_feature_set(df: pd.DataFrame, features: list[str], zoo: dict) -> dict:
     return {"table": pd.DataFrame(rows), "preds": preds, "importance": importances, "params": params}
 
 
+def run_spatial_nested(df: pd.DataFrame, features: list[str], zoo: dict,
+                       return_params: bool = False) -> tuple:
+    """嵌套留城市验证：被留出城市不参与自己的超参数选择。
+
+    每个外层折内部：用其余 8 个城市的 2019—2020 训练、2021 验证选超参；
+    再用其余 8 个城市 2019—2022 重训，最后在被留城市的全部年份上评价。
+    """
+    rows, pred_frames, param_rows = [], [], []
+    for city in sorted(df["city"].unique()):
+        hold = df["city"] == city
+        others = df[~hold & df["mda8"].notna()]
+        inner_train = others[others["year"].isin(config.TRAIN_YEARS)]
+        inner_val = others[others["year"] == config.VAL_YEAR]
+        test = df[hold & df["mda8"].notna()]
+        if test.empty or inner_train.empty or inner_val.empty:
+            continue
+        params = select_hyperparams(inner_train, inner_val, features, zoo)
+        for name, chosen in params.items():
+            param_rows.append({"city": city, "model": name, **chosen})
+        for name, (factory, _grid, _imp) in zoo.items():
+            model = factory(params[name])
+            model.fit(others[features], others["mda8"])
+            p = model.predict(test[features])
+            rows.append({"model": name, "city": city, **metrics(test["mda8"], p)})
+            pred_frames.append(pd.DataFrame({
+                "model": name, "city": city,
+                "station_code": test["station_code"].values, "date": test["date"].values,
+                "y_true": test["mda8"].values, "y_pred": np.asarray(p, dtype=float),
+            }))
+    per_city = pd.DataFrame(rows)
+    preds = pd.concat(pred_frames, ignore_index=True) if pred_frames else pd.DataFrame()
+    pooled = []
+    if not preds.empty:
+        for name, grp in preds.groupby("model"):
+            pooled.append({"model": name, **metrics(grp["y_true"], grp["y_pred"])})
+    out = pd.DataFrame(pooled)
+    if return_params:
+        return per_city, out, pd.DataFrame(param_rows)
+    return per_city, out
+
+
 def run_spatial(df: pd.DataFrame, features: list[str], zoo: dict, params: dict) -> tuple[pd.DataFrame, pd.DataFrame]:
     """留城市验证：整座城市的全部年份都不进入训练集。"""
     rows, pred_frames = [], []
