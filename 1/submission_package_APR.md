@@ -9,14 +9,14 @@
 |---|---|
 | Target journal | Atmospheric Pollution Research (Elsevier, ISSN 1309-1042) |
 | Article type | Original research article |
-| Title | Satellite precursor columns in regional near-surface ozone estimation: conditional incremental value, sample selection, and high-ozone reweighting in Fujian Province, China |
+| Title | Satellite precursor columns in regional near-surface ozone estimation: conditional incremental value, satellite-sample representativeness, and high-ozone reweighting in Fujian Province, China |
 | Keywords (≤6) | near-surface ozone; TROPOMI; XGBoost; high-ozone reweighting; nested leave-one-city-out validation; Fujian Province |
 | Abstract length | 238 words (as verified in the frozen abstract) |
 | Main figures | 5 (Fig. 1—Fig. 5) |
 | Main tables | 3 (Table 1—Table 3) |
 | Supplementary figures | 4 (Fig. S1—Fig. S4) |
 | Supplementary tables | 9 (Table S1—Table S8, including S5b) |
-| References | 15 |
+| References | 26 |
 
 ## 2. Highlights (optional for this journal; each ≤85 characters)
 
@@ -24,7 +24,7 @@
 2. Satellite gains are clear in time but weak and city-dependent in space.
 3. Common-valid samples are biased toward higher ozone (+25.71 μg/m³).
 4. High-ozone reweighting cuts high-ozone RMSE by 4.48–7.39%.
-5. The spatial gain is offset by a +0.21% overall RMSE trade-off.
+5. High-ozone gains come with a +0.21% overall RMSE change in spatial validation.
 
 ## 3. Cover letter
 
@@ -87,7 +87,7 @@ are available from the corresponding author upon reasonable request.
 
 **Competing interests.** None declared.
 
-**Funding.** [To be completed.]
+**Funding.** No specific grant was received; the Acknowledgements of the manuscript state this explicitly. If a grant does apply, replace that sentence and this entry with the project name, grant number and the sponsor's role in study design, analysis and submission.
 
 **CRediT.** As in the manuscript; author names to be inserted.
 
@@ -115,7 +115,7 @@ authors' own."]
 ## 7. Items that still require author input
 
 1. Author names, affiliations, corresponding author and email.
-2. Funding statement (or explicit "no specific funding").
+2. Confirm the "no specific grant" statement, or supply the grant name, number and sponsor role.
 3. Repository DOI for code and processed data (or confirmation that "available on request" is
    acceptable to the editors).
 4. Optional graphical abstract (not mandatory for this journal).
@@ -123,3 +123,17 @@ authors' own."]
    provided on the journal website and both must be verified separately.
 6. Formatting pass in the journal's Word template (reference style, line numbering, double
    spacing) at upload time.
+
+## 8. Revision log (pre-submission review round)
+
+| No. | Item | Change made | Location |
+|---|---|---|---|
+| 1 | Three contributions unified | Title, objectives, Discussion 4.4 positioning and Conclusions now define: (i) satellite incremental value with nested LOCO as its spatial test, (ii) satellite-sample representativeness, (iii) high-ozone gain–cost | Title; Section 1; 4.4; Section 6 |
+| 2 | TROPOMI processing made reproducible | Added Earth Engine collection IDs, tropospheric column band, `cloud_fraction` ≤ 0.30, UTC 16:00–16:00 matching window, common valid-pixel mask, daily pooling, buffer set and missing-value policy | Methods 2.2 |
+| 3 | References expanded 15 → 26 | Added 11 verified entries (4 APR ozone papers, 2 reviews, seamless/hourly products, chemistry-informed framework, city-scale multifactor, trajectory study) and cited each in Section 1 or 4.4 | Section 1; 4.4; References |
+| 4 | Funding statement de-conflicted | Removed the placeholder from Acknowledgements; the package now states the no-grant position once, with an instruction if a grant applies | Acknowledgements; package §5 |
+| 5 | Year-effect caveat added | Methods 2.9 and Limitations item 2 now state that year fixed effects were not included | Methods 2.9; Section 5 |
+| 6 | Highlights item 5 reworded | "The spatial gain is offset by…" → "High-ozone gains come with a +0.21% overall RMSE change in spatial validation." | Manuscript; package §2 |
+| 7 | SHAP "stable" removed | "Response shapes are stable" → "response patterns observed in the frozen model"; Discussion 4.2 likewise | 3.3; 4.2 |
+
+Verification: `scripts/22_check_manuscript_english.py` → 136 checks, 0 FAIL.

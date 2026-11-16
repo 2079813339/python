@@ -23,9 +23,10 @@
 | W4 | 英文 Abstract（238 词） | ✅ | 同上；含 E2 空间未达门槛、E4 低臭氧代价，未只选改善指标；“transferable”已改为“consistent across the temporal and within-region spatial validation protocols” |
 | W5 | 全文一致性检查（数值 + 归属） | ✅ | `consistency_check.txt`：**109 项**对照冻结表，FAIL=0（`scripts/21_check_manuscript_numbers.py`）；含 S5 VIF/相关（含两柱互相关）、S6 β与四季、S7 逐折阈值、文献条目数与“变量—数值配对”文本检查 |
 | W6 | 目标期刊筛选与投稿准备 | ✅ | `w6_journal_targets.md`：8 本候选 + 3 档定位（**主投 APR** / 冲刺 EP / 备选 AE / 保底 Remote Sensing），含范围关键句、近期同型论文（APR 4 篇 2024—2026）、APC 与周期口径、文章限制；JCR 与中科院分区须分别核实 |
-| W7 | APR 格式英文全文整合 | ✅ | `manuscript_APR_en.md`：Title→Abstract(238 词)/Keywords(6)→1 Introduction（三条缺口+三贡献）→2 Methods（含 E2 析因、SHAP、E4 三阈值、嵌套 LOCO、选择偏差回归）→3 Results→4 Discussion→5 Limitations→6 Conclusions→Data/Code Availability→CRediT→Competing Interest→Acknowledgements→References(15) |
+| W7 | APR 格式英文全文整合 | ✅ | `manuscript_APR_en.md`：Title→Abstract(238 词)/Keywords(6)→1 Introduction（三条缺口+三贡献）→2 Methods（含 E2 析因、SHAP、E4 三阈值、嵌套 LOCO、选择偏差回归）→3 Results→4 Discussion→5 Limitations→6 Conclusions→Data/Code Availability→CRediT→Competing Interest→Acknowledgements→References(26) |
 | W8 | 投稿文件包与编号统一 | ✅ | `submission_package_APR.md`（metadata、Highlights 5 条均 ≤85 字符、Cover Letter、声明、文件清单、待作者补充项）；`outputs/paper/figures/Fig1—Fig5.png`、`FigS1—FigS4.png` 已完成重命名；Table 1—3 与 Table S1—S8（含 S5b）编号在正文与清单中一致 |
-| W9 | 英稿件数字与术语一致性检查 | ✅ | `consistency_check_en.txt`：**131 项 PASS、FAIL=0**（`scripts/22_check_manuscript_english.py`）；核对 E2/E4/SHAP/SSE/相关/VIF/逐折阈值/选择偏差等冻结数值，并检查 clear-sky 禁用、非因果表述、71.3% 分母说明、摘要词数与 Highlights 长度 |
+| W9 | 英稿件数字与术语一致性检查 | ✅ | `consistency_check_en.txt`：**136 项 PASS、FAIL=0**（`scripts/22_check_manuscript_english.py`）；核对 E2/E4/SHAP/SSE/相关/VIF/逐折阈值/选择偏差等冻结数值，并检查 clear-sky 禁用、非因果表述、71.3% 分母说明、摘要词数、Highlights 长度、新增文献是否均在正文被引用 |
+| W10 | 投稿前文献与论证完整性修订 | ✅ | 统一三项贡献定义（标题/引言/4.4/结论）；Methods 2.2 补全 GEE 集合 ID、波段、cloud_fraction≤0.30、UTC 匹配窗口、共同有效像元掩膜；参考文献 15→26（新增 4 篇 APR 臭氧论文、2 篇综述、无缝/逐时臭氧产品、化学知情解释框架、城市尺度多因子、轨迹研究），且逐条在正文引用；Funding 声明去重；补年份固定效应缺失说明；改写 Highlights 第 5 条；删除 SHAP "stable" 措辞。修订记录见 `submission_package_APR.md` §8 |
 
 ## 审稿前修订清单（R1—R7）
 

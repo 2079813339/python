@@ -199,12 +199,24 @@ def main() -> None:
 
     # 4) 术语与边界（存在型）
     ab = doc.split("## Abstract")[1].split("**Keywords**")[0]
+    body = doc.split("## References")[0]
+    new_refs = ["Li Z. et al., 2024", "Li T. et al., 2025", "Li S. et al., 2025",
+                "Wang Y. et al., 2025", "Wang L. et al., 2025", "Zhu et al., 2024",
+                "Hickman et al., 2025", "Tang et al., 2024", "Sun et al., 2026",
+                "Wang and Yu, 2026", "Hu et al., 2026"]
     term_checks = [
         ("禁用 clear-sky", "clear-sky" not in doc and "clear sky" not in doc),
         ("摘要无 transferable", "transferable" not in ab),
         ("摘要任务边界为 estimation", "estimation, not forecasting" in ab),
         ("无 significant improvement", "significant improvement" not in doc.lower()),
         ("无 proves", re.search(r"\bproves\b", doc.lower()) is None),
+        ("新增文献均在正文被引用", all(c in body for c in new_refs)),
+        ("SHAP 未声称 stability",
+         "response shapes are stable" not in doc and "two stable structural descriptions" not in doc),
+        ("选择偏差年份效应已声明", "not fully removed" in doc and "Year fixed effects were not included" in doc),
+        ("Highlights 第 5 条已改写", "High-ozone gains come with a +0.21%" in body),
+        ("三项贡献定义统一", "satellite-sample representativeness" in body
+         and "with the nested LOCO protocol as its spatial test" in body),
         ("estimation 而非 forecasting（任务边界句）", "not a forecasting study" in doc),
         ("共同有效样本术语", "common-valid" in doc and "satellite-observable conditions" in doc),
         ("S6 非因果表述", "not evidence that satellite observation causes higher ozone" in doc),
@@ -247,8 +259,8 @@ def main() -> None:
     refs = doc.split("## References")[1].split("---")[0]
     n_doi = len(re.findall(r"https://(?:doi\.org|arxiv\.org)/\S+", refs))
     n_entries = len([ln for ln in refs.splitlines() if re.match(r"^[A-Z][a-z]+ [A-Z]", ln.strip())])
-    chk("references entries >=15", n_entries >= 15, str(n_entries))
-    chk("references DOI/arXiv >=13", n_doi >= 13, str(n_doi))
+    chk("references entries >=23", n_entries >= 23, str(n_entries))
+    chk("references DOI/arXiv >=20", n_doi >= 20, str(n_doi))
 
     tab = pd.DataFrame(rows)
     tab.to_csv(OUT / "consistency_check_en.csv", index=False, encoding="utf-8-sig")

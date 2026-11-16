@@ -1,0 +1,141 @@
+英文投稿稿件一致性校验（APR）
+========================================================
+共 136 项，FAIL 0 项
+
+                                        检查项                                                                                   结果表值   通过
+                  E2-0 temporal RMSE 19.300                                                                                 19.300 PASS
+                  E2-1 temporal RMSE 18.902                                                                                 18.902 PASS
+                  E2-2 temporal RMSE 18.945                                                                                 18.945 PASS
+                  E2-3 temporal RMSE 18.642                                                                                 18.642 PASS
+                 E2-3 temporal dRMSE -0.658                                                                                 −0.658 PASS
+                     E2-3 temporal d% -3.41                                                                                  −3.41 PASS
+                   E2-0 spatial RMSE 17.277                                                                                 17.277 PASS
+                   E2-1 spatial RMSE 16.960                                                                                 16.960 PASS
+                   E2-2 spatial RMSE 17.042                                                                                 17.042 PASS
+                   E2-3 spatial RMSE 16.800                                                                                 16.800 PASS
+                  E2-3 spatial dRMSE -0.477                                                                                 −0.477 PASS
+                      E2-3 spatial d% -2.76                                                                                  −2.76 PASS
+               E4-0 temporal overall 18.642                                                                                 18.642 PASS
+               E4-1 temporal overall 18.270                                                                                 18.270 PASS
+             E4-1 temporal overall d% -1.99                                                                                  −1.99 PASS
+                  E4-0 temporal high 33.341                                                                                 33.341 PASS
+                  E4-1 temporal high 31.847                                                                                 31.847 PASS
+                E4-1 temporal high d% -4.48                                                                                  −4.48 PASS
+                   E4-0 temporal low 16.193                                                                                 16.193 PASS
+                   E4-1 temporal low 16.057                                                                                 16.057 PASS
+                 E4-1 temporal low d% -0.84                                                                                  −0.84 PASS
+            E4-1 temporal high bias -27.026                                                                                −27.026 PASS
+            E4-1 temporal high MAE d% -6.17                                                                                  −6.17 PASS
+                E4-0 spatial overall 16.800                                                                                 16.800 PASS
+                E4-1 spatial overall 16.836                                                                                 16.836 PASS
+              E4-1 spatial overall d% +0.21                                                                                   0.21 PASS
+                   E4-0 spatial high 23.282                                                                                 23.282 PASS
+                   E4-1 spatial high 21.562                                                                                 21.562 PASS
+                 E4-1 spatial high d% -7.39                                                                                  −7.39 PASS
+                    E4-1 spatial low 16.224                                                                                 16.224 PASS
+                  E4-1 spatial low d% +1.94                                                                                   1.94 PASS
+           E4-0 spatial overall bias +1.220                                                                                  1.220 PASS
+           E4-1 spatial overall bias +2.208                                                                                  2.208 PASS
+             E4-0 spatial high bias -17.731                                                                                −17.731 PASS
+             E4-1 spatial high bias -15.444                                                                                −15.444 PASS
+                E4-2 temporal high d% -2.48                                                                                  −2.48 PASS
+                 E4-2 spatial high d% -3.94                                                                                  −3.94 PASS
+              E4-2 spatial overall d% +0.57                                                                                   0.57 PASS
+         E2-3 temporal station CI lo -0.930                                                                                 −0.930 PASS
+         E2-3 temporal station CI hi -0.396                                                                                 −0.396 PASS
+            E2-3 temporal city CI lo -1.024                                                                                 −1.024 PASS
+            E2-3 temporal city CI hi -0.287                                                                                 −0.287 PASS
+          E2-3 spatial station CI lo -0.852                                                                                 −0.852 PASS
+          E2-3 spatial station CI hi -0.156                                                                                 −0.156 PASS
+             E2-3 spatial city CI lo -1.212                                                                                 −1.212 PASS
+             E2-3 spatial city CI hi +0.107                                                                                  0.107 PASS
+E4-1 temporal high station CI -1.977/-1.000                                                                                 −1.977 PASS
+          E4-1 temporal high city CI -1.993                                                                                 −1.993 PASS
+        E4-1 spatial high station CI -2.068                                                                                 −2.068 PASS
+           E4-1 spatial high city CI -2.357                                                                                 −2.357 PASS
+  E4-1 spatial overall station CI lo -0.134                                                                                 −0.134 PASS
+  E4-1 spatial overall station CI hi +0.205                                                                                  0.205 PASS
+       E4-1 spatial overall P_improve 0.336                                                                                  0.336 PASS
+                             SHAP NO2 2.284                                                                                  2.284 PASS
+                            SHAP HCHO 1.232                                                                                  1.232 PASS
+                        SHAP NO2 share 4.10                                                                                   4.10 PASS
+                       SHAP HCHO share 2.21                                                                                   2.21 PASS
+                  SHAP high-ozone abs 4.691                                                                                  4.691 PASS
+                   SHAP low-ozone abs 3.298                                                                                  3.298 PASS
+               SSE temporal high share 32.1                                                                                   32.1 PASS
+                SSE spatial high share 19.3                                                                                   19.3 PASS
+        SSE temporal high contribution 71.3                                                                                   71.3 PASS
+                      corr NO2-ground 0.551                                                                                  0.551 PASS
+             corr NO2-ground spearman 0.526                                                                                  0.526 PASS
+                        corr NO2-PM10 0.407                                                                                  0.407 PASS
+                 corr columns pearson 0.062                                                                                  0.062 PASS
+                corr columns spearman 0.132                                                                                  0.132 PASS
+                              VIF NO2 2.095                                                                                  2.095 PASS
+                             VIF HCHO 1.295                                                                                  1.295 PASS
+                  foldwise E4-0 high 23.273                                                                                 23.273 PASS
+                  foldwise E4-1 high 21.536                                                                                 21.536 PASS
+                          foldwise d% -7.47                                                                                  −7.47 PASS
+                common-valid coverage 42.58                                                                                  42.58 PASS
+                       modeling rows 51,486                                                                                 51,486 PASS
+                        common-valid 21,925                                                                                 21,925 PASS
+                            2022 test 4,691                                                                                  4,691 PASS
+                 spatial high-ozone n 2,198                                                                                  2,198 PASS
+                  temporal high-ozone n 471                                                                                    471 PASS
+            high-ozone share temporal 10.04                                                                                  10.04 PASS
+             high-ozone share spatial 10.03                                                                                  10.03 PASS
+                foldwise high-ozone n 2,224                                                                                  2,224 PASS
+                              S6 beta 25.71                                                                                        PASS
+                                 S6 SE 0.65                                                                                        PASS
+                                  S6 t 39.3                                                                                        PASS
+                                S6 n 50,192                                                                                        PASS
+                             S6 clusters 38                                                                                        PASS
+                     S6 冬 difference 31.136                                                                                 31.136 PASS
+                     S6 春 difference 31.241                                                                                 31.241 PASS
+                     S6 夏 difference 18.575                                                                                 18.575 PASS
+                     S6 秋 difference 29.272                                                                                 29.272 PASS
+                     S6 nine-city min 19.23                                                                                  19.23 PASS
+                     S6 nine-city max 31.81                                                                                  31.81 PASS
+                               禁用 clear-sky                                                                                        PASS
+                           摘要无 transferable                                                                                        PASS
+                         摘要任务边界为 estimation                                                                                        PASS
+                  无 significant improvement                                                                                        PASS
+                                   无 proves                                                                                        PASS
+                                新增文献均在正文被引用                                                                                        PASS
+                         SHAP 未声称 stability                                                                                        PASS
+                                选择偏差年份效应已声明                                                                                        PASS
+                        Highlights 第 5 条已改写                                                                                        PASS
+                                   三项贡献定义统一                                                                                        PASS
+           estimation 而非 forecasting（任务边界句）                                                                                        PASS
+                                   共同有效样本术语                                                                                        PASS
+                                   S6 非因果表述                                                                                        PASS
+                                   月份固定效应英文                                                                                        PASS
+                                      三阈值齐备                                                                                        PASS
+                                   阈值不可直接比较                                                                                        PASS
+                                 71.3% 分母说明                                                                                        PASS
+                                   E4 为训练策略                                                                                        PASS
+                                 SHAP 非机制证据                                                                                        PASS
+                                      未宣称首创                                                                                        PASS
+                                   未宣称可跨省迁移                                                                                        PASS
+                               NO2 归属 4.10%                                                                                        PASS
+                              HCHO 归属 2.21%                                                                                        PASS
+                          正文无 HCHO 4.10% 错配                                                                                        PASS
+                abstract word count 220-250                                                                                    238 PASS
+                       highlights 3-5 items                                                                                      5 PASS
+                     highlight 1 <=85 chars       76: Same-sample ablation isolates the incremental value of HCHO and NO₂ columns. PASS
+                     highlight 2 <=85 chars            71: Satellite gains are clear in time but weak and city-dependent in space. PASS
+                     highlight 3 <=85 chars 82: Common-valid samples are systematically biased toward higher ozone (+25.71 μg/m³). PASS
+                     highlight 4 <=85 chars                         58: High-ozone reweighting cuts high-ozone RMSE by 4.48–7.39%. PASS
+                     highlight 5 <=85 chars     78: High-ozone gains come with a +0.21% overall RMSE change in spatial validation. PASS
+                               Fig. 1 引用与文件                                                                                   True PASS
+                               Fig. 2 引用与文件                                                                                   True PASS
+                               Fig. 3 引用与文件                                                                                   True PASS
+                               Fig. 4 引用与文件                                                                                   True PASS
+                               Fig. 5 引用与文件                                                                                   True PASS
+                               Fig. S1 文件存在                                                                                        PASS
+                               Fig. S2 文件存在                                                                                        PASS
+                               Fig. S3 文件存在                                                                                        PASS
+                               Fig. S4 文件存在                                                                                        PASS
+                             Table 1-3 均在正文                                                                                        PASS
+                             Table S1-S8 清单                                                                                        PASS
+                    references entries >=23                                                                                     26 PASS
+                  references DOI/arXiv >=20                                                                                     25 PASS
