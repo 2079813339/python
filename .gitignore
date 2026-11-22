@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.log
+
+# local runtime artifacts
+data/
+artifacts/
+mlruns/
+*.db
+*.sqlite
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# env
+.env
+.env.local
+
+# ide / os
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
